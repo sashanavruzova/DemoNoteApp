@@ -1,5 +1,5 @@
 # DemoNoteApp
-## Demo project to demonstrate usage of technologies for iOS development 
+## Demo project to demonstrate usage of technologies in iOS development 
 Technologies used in this project:
  - Swift language
  - UIKit
