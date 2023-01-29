@@ -17,6 +17,8 @@
 		3991C02229745A3800FF2599 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3991C02129745A3700FF2599 /* SignUpViewController.swift */; };
 		3991C02429745A4800FF2599 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3991C02329745A4800FF2599 /* LogInViewController.swift */; };
 		3991C02629745A5A00FF2599 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3991C02529745A5A00FF2599 /* HomeViewController.swift */; };
+		3991C02C298530F800FF2599 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3991C02B298530F800FF2599 /* Utilities.swift */; };
+		3991C02E2985310B00FF2599 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3991C02D2985310B00FF2599 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		3991C02129745A3700FF2599 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3991C02329745A4800FF2599 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		3991C02529745A5A00FF2599 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3991C02B298530F800FF2599 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		3991C02D2985310B00FF2599 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		3991C009297459B600FF2599 /* NoteApp */ = {
 			isa = PBXGroup;
 			children = (
+				3991C02A298530E300FF2599 /* Helpers */,
 				3991C02929745A8600FF2599 /* Views */,
 				3991C02829745A7700FF2599 /* ViewModels */,
 				3991C02729745A6E00FF2599 /* Models */,
@@ -101,6 +106,15 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3991C02A298530E300FF2599 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3991C02B298530F800FF2599 /* Utilities.swift */,
+				3991C02D2985310B00FF2599 /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,7 +194,9 @@
 				3991C00D297459B600FF2599 /* SceneDelegate.swift in Sources */,
 				3991C015297459B600FF2599 /* NoteApp.xcdatamodeld in Sources */,
 				3991C02629745A5A00FF2599 /* HomeViewController.swift in Sources */,
+				3991C02C298530F800FF2599 /* Utilities.swift in Sources */,
 				3991C02229745A3800FF2599 /* SignUpViewController.swift in Sources */,
+				3991C02E2985310B00FF2599 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
