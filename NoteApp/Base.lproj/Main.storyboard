@@ -74,12 +74,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="k8V-te-Q7W">
                                 <rect key="frame" x="40" y="99.000000000000014" width="313" height="230.33333333333337"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BSC-20-pG6">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BSC-20-pG6">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9HL-Fh-lTq">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9HL-Fh-lTq">
                                         <rect key="frame" x="0.0" y="70" width="313" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -91,8 +91,11 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Log In"/>
+                                        <connections>
+                                            <action selector="logInTaped:" destination="n1p-a5-Wzf" eventType="touchUpInside" id="Umx-H7-7iY"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coj-pM-fuH">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coj-pM-fuH">
                                         <rect key="frame" x="0.0" y="210" width="313" height="20.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
@@ -115,10 +118,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="tJM-Sq-bbI"/>
                     <connections>
+                        <outlet property="emailTextField" destination="BSC-20-pG6" id="u3q-kr-MnP"/>
                         <outlet property="errorLabel" destination="coj-pM-fuH" id="al6-Db-cQL"/>
-                        <outlet property="firstNameTextField" destination="BSC-20-pG6" id="jiu-mG-lNE"/>
-                        <outlet property="lastNameTextField" destination="9HL-Fh-lTq" id="QZL-bK-cmo"/>
                         <outlet property="logInButton" destination="Sww-dR-rjR" id="niz-4i-sK5"/>
+                        <outlet property="passwordTextField" destination="9HL-Fh-lTq" id="khO-0F-vAe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sng-h2-ZoT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -163,8 +166,11 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
+                                        <connections>
+                                            <action selector="signUpTapped:" destination="glA-f5-IG5" eventType="touchUpInside" id="iBy-t1-9hs"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjX-QV-Plj">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjX-QV-Plj">
                                         <rect key="frame" x="0.0" y="300" width="313" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
@@ -201,15 +207,27 @@
             </objects>
             <point key="canvasLocation" x="1805" y="-172"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="pCs-Ml-EcV">
             <objects>
-                <viewController id="Da1-yq-66F" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="Da1-yq-66F" customClass="HomeViewController" customModule="NoteApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QyT-tr-j1I">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eE-Cq-FB2">
+                                <rect key="frame" x="144.66666666666666" y="412.33333333333331" width="104" height="27.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="yt2-ea-mgB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4eE-Cq-FB2" firstAttribute="centerX" secondItem="QyT-tr-j1I" secondAttribute="centerX" id="RWB-yJ-5Y5"/>
+                            <constraint firstItem="4eE-Cq-FB2" firstAttribute="centerY" secondItem="QyT-tr-j1I" secondAttribute="centerY" id="UkJ-Zi-xce"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1CP-DC-h14" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
