@@ -21,6 +21,9 @@ public class SignUpViewModel {
     if fields.contains("") {
       return "Please, fill in all the fields"
     }
+    if Utilities.isPasswordValid(password) == false {
+      return "Please, make sure that your password is at least 8 characters long, contains a special chaaracter and a number."
+    }
     return nil
   }
   

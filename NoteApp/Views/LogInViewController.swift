@@ -15,6 +15,8 @@ class LogInViewController: UIViewController {
   @IBOutlet weak var logInButton: UIButton!
   @IBOutlet weak var errorLabel: UILabel!
   
+  private var viewModel = LogInViewModel()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -25,27 +27,33 @@ class LogInViewController: UIViewController {
     errorLabel.alpha = 0
     
     Utilities.styleTextField(emailTextField)
-    Utilities.styleTextField(passwordTextField  )
+    Utilities.styleTextField(passwordTextField)
     Utilities.styleFilledButton(logInButton)
   }
 
+  func showError(_ message: String) {
+    errorLabel.text = message
+    errorLabel.alpha = 1
+  }
 
   @IBAction func logInTaped(_ sender: Any) {
-    if let email = emailTextField.text?.trimmed,
-       let password = passwordTextField.text?.trimmed {
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-          guard let strongSelf = self else { return }
-          
-          if error != nil {
-            strongSelf.errorLabel.text = error!.localizedDescription
-            strongSelf.errorLabel.alpha = 1
-          } else {
-            let homeViewController = strongSelf.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? HomeViewController
-            strongSelf.view.window?.rootViewController = homeViewController
-            strongSelf.view.window?.makeKeyAndVisible()
-          }
-        
+    viewModel.email = emailTextField.text?.trimmed ?? ""
+    viewModel.password = passwordTextField.text?.trimmed ?? ""
+    
+    viewModel.signIn { [weak self] result in
+      guard let self = self else { return }
+      switch result {
+      case .success:
+        self.transitionToHome()
+      case .failure(let error):
+        self.showError(error.localizedDescription)
       }
     }
+  }
+  
+  func transitionToHome() {
+    let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? HomeViewController
+    view.window?.rootViewController = homeViewController
+    view.window?.makeKeyAndVisible()
   }
 }
