@@ -7,6 +7,8 @@ Develop a Note App which includes :
 Display the obtained data in a UITableView / UICollectionView, up to you. Each cell must contain the “first_name”, “family_name” and the “avatar”. When a cell is clicked, the user will redirected to an Info Screen the rest of the data in according with the picked cell.
 - Note Screen : The note screen gives the user options to create and remove notes. When tapping a note, its details have to be displayed in another screen. The saved note must be editable.
 If no notes have been retrieved, create a UI element to warn the user.
+- Map Screen : Saved notes are to be displayed in the map screen according to their saved location.
+When displayed elements are tapped, it will be given to edit/remove the note.
 
 Technologies used in this project:
  - Swift language
