@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3935428529A10216009DC7AF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3935428429A10216009DC7AF /* Router.swift */; };
 		397421E02989720300EE67B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 397421DF2989720300EE67B9 /* GoogleService-Info.plist */; };
 		397421E32989738500EE67B9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 397421E22989738500EE67B9 /* FirebaseAuth */; };
 		397421E52989738500EE67B9 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 397421E42989738500EE67B9 /* FirebaseDatabase */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3935428429A10216009DC7AF /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		397421DF2989720300EE67B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		398584D72995220000B73E59 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		398584D92995221100B73E59 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3935428329A10201009DC7AF /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3935428429A10216009DC7AF /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		3991BFFE297459B600FF2599 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +96,7 @@
 		3991C009297459B600FF2599 /* NoteApp */ = {
 			isa = PBXGroup;
 			children = (
+				3935428329A10201009DC7AF /* Router */,
 				39E66664298BE70B002E2C61 /* Extensions */,
 				3991C02A298530E300FF2599 /* Helpers */,
 				3991C02929745A8600FF2599 /* Views */,
@@ -239,6 +250,7 @@
 				398584DA2995221100B73E59 /* SignUpViewModel.swift in Sources */,
 				3991C02C298530F800FF2599 /* Utilities.swift in Sources */,
 				3991C02229745A3800FF2599 /* SignUpViewController.swift in Sources */,
+				3935428529A10216009DC7AF /* Router.swift in Sources */,
 				39E66666298BE726002E2C61 /* StringExtension.swift in Sources */,
 				398584D82995220000B73E59 /* LogInViewModel.swift in Sources */,
 				3991C02E2985310B00FF2599 /* Constants.swift in Sources */,

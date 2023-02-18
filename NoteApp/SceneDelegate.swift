@@ -28,18 +28,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   
   private func checkLoggedIn() {
     Auth.auth().addStateDidChangeListener { auth, user in
-      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      guard let window = self.window else { return }
       if let _ = user {
-        let homeViewController = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? HomeViewController
-        if let sceneDelegate = self.window?.windowScene?.delegate as? SceneDelegate {
-          sceneDelegate.window?.rootViewController = homeViewController
-        }
+        Router.showScreen(in: window, isLoggedIn: true, storyboardID: Constants.Storyboard.homeViewController)
       }
       else {
-        let homeViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController
-        if let sceneDelegate = self.window?.windowScene?.delegate as? SceneDelegate {
-          sceneDelegate.window?.rootViewController = homeViewController
-        }
+        Router.showScreen(in: window, isLoggedIn: true, storyboardID: "ViewController")
       }
     }
   }
