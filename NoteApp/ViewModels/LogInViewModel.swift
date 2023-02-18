@@ -13,7 +13,6 @@ class LogInViewModel {
   var email = ""
   var password = ""
   var errorMessage: String?
-  var onSuccessLogin: (() -> Void)?
   
   func validateFields() -> String? {
     let fields = [password, email]
