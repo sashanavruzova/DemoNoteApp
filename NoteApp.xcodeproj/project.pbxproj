@@ -104,7 +104,6 @@
 				3991C02729745A6E00FF2599 /* Models */,
 				3991C00A297459B600FF2599 /* AppDelegate.swift */,
 				3991C00C297459B600FF2599 /* SceneDelegate.swift */,
-				3991C00E297459B600FF2599 /* ViewController.swift */,
 				3991C010297459B600FF2599 /* Main.storyboard */,
 				3991C016297459BB00FF2599 /* Assets.xcassets */,
 				397421DF2989720300EE67B9 /* GoogleService-Info.plist */,
@@ -135,6 +134,7 @@
 		3991C02929745A8600FF2599 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3991C00E297459B600FF2599 /* ViewController.swift */,
 				3991C02129745A3700FF2599 /* SignUpViewController.swift */,
 				3991C02329745A4800FF2599 /* LogInViewController.swift */,
 				3991C02529745A5A00FF2599 /* HomeViewController.swift */,

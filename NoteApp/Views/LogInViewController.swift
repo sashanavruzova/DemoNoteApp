@@ -16,6 +16,7 @@ class LogInViewController: UIViewController {
   @IBOutlet weak var errorLabel: UILabel!
   
   private var viewModel = LogInViewModel()
+  var window: UIWindow?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -42,18 +43,13 @@ class LogInViewController: UIViewController {
     
     viewModel.signIn { [weak self] result in
       guard let self = self else { return }
+      guard let window = self.window else { return }
       switch result {
       case .success:
-        self.transitionToHome()
+        Router.showScreen(in: window, isLoggedIn: true, storyboardID: Constants.Storyboard.homeViewController)
       case .failure(let error):
         self.showError(error.localizedDescription)
       }
     }
-  }
-  
-  func transitionToHome() {
-    let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? HomeViewController
-    view.window?.rootViewController = homeViewController
-    view.window?.makeKeyAndVisible()
   }
 }
